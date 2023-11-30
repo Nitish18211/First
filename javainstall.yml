@@ -1,0 +1,14 @@
+---
+- hosts: 34.201.136.55
+  become: true
+  tasks:
+  - name: install Java
+    apt:
+      name: "{{ packages }}"
+      state: latest
+      update_cache: true
+    vars: 
+      packages: 
+      - 'openjdk-8-jdk'
+      - 'git'
+      update_cache: true
